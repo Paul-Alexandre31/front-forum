@@ -1,0 +1,40 @@
+header .menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+
+}
+
+.search {
+    background-color: white;
+    color: black;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.placeholder{
+    align-content: center;
+}
+
+.search input {
+    border: none;
+    box-shadow: none;
+    height: 100%;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+.search i {
+    padding-right: 5px;
+}
+.header-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
