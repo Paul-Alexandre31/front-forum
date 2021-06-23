@@ -19,8 +19,11 @@ app.get('/', function (req, res) {
 app.get('/register', function (req, res) {
     res.render('page/register' );
 });
-app.get('/register', function (req, res) {
+app.get('/connect', function (req, res) {
     res.render('page/connect' );
+});
+app.get('/hot_topics', function (req, res) {
+    res.render('page/hot_topics' );
 });
 
 app.listen(3000);
