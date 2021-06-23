@@ -19,5 +19,8 @@ app.get('/', function (req, res) {
 app.get('/register', function (req, res) {
     res.render('page/register' );
 });
+app.get('/register', function (req, res) {
+    res.render('page/connect' );
+});
 
 app.listen(3000);
