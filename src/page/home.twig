@@ -1,16 +1,29 @@
 {% extends "../default.twig" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-    <link rel="stylesheet" href="/static/css/register.css">
-{% endblock %}
-{% block content %}
+    <style>
+        .mySlides {
+            font-family: "Lato", sans-serif;
+            display: none
+        }
+    </style>
+    <body>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+    </div>
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
         <h2 class="w3-wide">Forum Web</h2>
         <div class="w3-row w3-padding-32">
         </div>
-    </div>
 
-    <div id="tour">
+        <!-- The Tour Section -->
+
+        <div d="tour">
             <div class="list-box">
                 <div class="box">
                     <div class="photo">
@@ -23,13 +36,105 @@
                             <h4>test</h4>
                         </div>
                         <div class="txt">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, eligendi id illum
-                            molestias necessitatibus non veniam voluptatum. A aliquam eveniet, fuga itaque iure
-                            laboriosam nesciunt perferendis repellendus reprehenderit sapiente vitae?
+
+                            <p> contenue texte du message</p>
+                            <span class="likebtn-wrapper" data-theme="google" data-identifier="item_1"></span>
+                            <script> (function (d, e, s) {
+                                    if (d.getElementById("likebtn_wjs")) return;
+                                    a = d.createElement(e);
+                                    m = d.getElementsByTagName(e)
+                                        [0];
+                                    a.async = 1;
+                                    a.id = "likebtn_wjs";
+                                    a.src = s;
+                                    m.parentNode.insertBefore(a, m)
+                                })(document, "script", "//w.likebtn.com/js/w/widget.js");
+
+                            </script>
                         </div>
                     </div>
                 </div>
             </div>
 
-</div>
+        </div>
+
+        <!-- Ticket Modal -->
+        <div id="ticketModal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-teal w3-center w3-padding-32">
+         <span onclick="document.getElementById('ticketModal').style.display='none'"
+               class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                    <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+                </header>
+                <div class="w3-container">
+                    <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+                    <input class="w3-input w3-border" type="text" placeholder="How many?">
+                    <p><label><i class="fa fa-user"></i> Send To</label></p>
+                    <input class="w3-input w3-border" type="text" placeholder="Enter email">
+                    <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i
+                                class="fa fa-check"></i></button>
+                    <button class="w3-button w3-red w3-section"
+                            onclick="document.getElementById('ticketModal').style.display='none'">Close <i
+                                class="fa fa-remove"></i></button>
+                    <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Page Content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Ynov</a>
+        </p>
+    </footer>
+
+    <script>
+        // Automatic Slideshow - change image every 4 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000);
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        var modal = document.getElementById('ticketModal');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    </body>
+    </html>
+
 {% endblock %}
