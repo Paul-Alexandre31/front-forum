@@ -25,5 +25,9 @@ app.get('/connect', function (req, res) {
 app.get('/hot_topics', function (req, res) {
     res.render('page/hot_topics' );
 });
+app.get('/static', function (req, res) {
+    res.render('img' );
+});
+
 
 app.listen(3000);
