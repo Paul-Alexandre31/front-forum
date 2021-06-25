@@ -28,6 +28,9 @@ app.get('/hot_topics', function (req, res) {
 app.get('/static', function (req, res) {
     res.render('img' );
 });
+app.get('/write_message', function (req, res) {
+    res.render('page/write_message' );
+});
 
 
 app.listen(3000);
