@@ -7,109 +7,9 @@
             font-family: "Lato", sans-serif;
             display: none
         }
-
-        .like-content span {
-            color: #9d9da4;
-            font-family: monospace;
-        }
-        .like-content .btn-secondary {
-            display: block;
-            margin: 40px auto 0px;
-            text-align: center;
-            background: #ed2553;
-            border-radius: 3px;
-            box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-            padding: 10px 17px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            text-decoration: none;
-            -webkit-transition: 0.3s ease;
-            transition: 0.3s ease;
-        }
-        .like-content .btn-secondary:hover {
-            transform: translateY(-3px);
-        }
-        .like-content .btn-secondary .fa {
-            margin-right: 5px;
-        }
-        .animate-like {
-            animation-name: likeAnimation;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-            animation-duration: 0.65s;
-        }
-        @keyframes likeAnimation {
-            0%   { transform: scale(30); }
-            100% { transform: scale(1); }
-        }
     </style>
-    <body>
-    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-        <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-    </div>
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-        <div class="w3-row w3-padding-32">
-        </div>
 
-        <!-- The Tour Section -->
 
-        <div d="tour">
-            <div class="list-box">
-                <div class="box">
-                    <div class="photo">
-                        <img src="https://media.istockphoto.com/vectors/neutral-profile-picture-vector-id1091291084?k=6&m=1091291084&s=170667a&w=0&h=2Dx_R7emqSPjyLcvTRaPqXzbf4RP37hJf9DjUPD65lk="
-                             alt="">
-                    </div>
-                    <div class="content">
-                        <div class="title">
-                            <h1>pseudo</h1>
-                        </div>
-                        <div class="txt">
-                            <p> contenue texte du message</p>
-                            <div class="like-content">
-                                <button class="btn-secondary like-review" >
-                                    <i class="fa fa-heart" aria-hidden="true"></i> Like
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Ticket Modal -->
-        <div id="ticketModal" class="w3-modal">
-            <div class="w3-modal-content w3-animate-top w3-card-4">
-                <header class="w3-container w3-teal w3-center w3-padding-32">
-         <span onclick="document.getElementById('ticketModal').style.display='none'"
-               class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
-                    <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-                </header>
-                <div class="w3-container">
-                    <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-                    <input class="w3-input w3-border" type="text" placeholder="How many?">
-                    <p><label><i class="fa fa-user"></i> Send To</label></p>
-                    <input class="w3-input w3-border" type="text" placeholder="Enter email">
-                    <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i
-                                class="fa fa-check"></i></button>
-                    <button class="w3-button w3-red w3-section"
-                            onclick="document.getElementById('ticketModal').style.display='none'">Close <i
-                                class="fa fa-remove"></i></button>
-                    <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- End Page Content -->
-    </div>
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
         <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -121,44 +21,6 @@
         <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Ynov</a>
         </p>
     </footer>
-
-    <script>
-        // Automatic Slideshow - change image every 4 seconds
-        var myIndex = 0;
-        carousel();
-
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            myIndex++;
-            if (myIndex > x.length) {
-                myIndex = 1
-            }
-            x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 4000);
-        }
-
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function myFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        var modal = document.getElementById('ticketModal');
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
     </body>
     </html>
