@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    let formLogin = document.getElementById('form-login')
+    let formLogin = document.getElementById('login')
 
     console.log(formLogin)
 
