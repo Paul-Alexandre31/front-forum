@@ -1,0 +1,85 @@
+{% extends "../default.twig" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    <style>
+
+        .mySlides {
+            font-family: "Lato", sans-serif;
+            display: none
+        }
+
+        .like-content span {
+            color: #9d9da4;
+            font-family: monospace;
+        }
+
+        .like-content .btn-secondary {
+            display: block;
+            margin: 40px auto 0px;
+            text-align: center;
+            background: #ed2553;
+            border-radius: 3px;
+            box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+            padding: 10px 17px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            text-decoration: none;
+            -webkit-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
+
+        .like-content .btn-secondary:hover {
+            transform: translateY(-3px);
+        }
+
+        .like-content .btn-secondary .fa {
+            margin-right: 5px;
+        }
+
+        .animate-like {
+            animation-name: likeAnimation;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-duration: 0.65s;
+        }
+
+        @keyframes likeAnimation {
+            0% {
+                transform: scale(30);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    {% for post in post_info %}
+
+    <div class="box">
+    <div class="photo">
+        <img src="https://media.istockphoto.com/vectors/neutral-profile-picture-vector-id1091291084?k=6&m=1091291084&s=170667a&w=0&h=2Dx_R7emqSPjyLcvTRaPqXzbf4RP37hJf9DjUPD65lk="
+             alt="">
+    </div>
+    <div class="content">
+        <div class="title">
+            <h1 id="username">{{post.}} </h1>
+        </div>
+        <div class="txt">
+            <p> contenue texte du message</p>
+            <div class="like-content">
+                <button class="btn-secondary like-review">
+                    <i class="fa fa-heart" aria-hidden="true"></i> Like
+                </button>
+            </div>
+            <a href="/" class="w3-bar-item w3-button w3-padding-large">respond</a>
+
+
+        </div>
+    </div>
+</div>
+    {% endfor %}
+{% endblock %}
+
+    <li>{{ user.username|e }}</li>
