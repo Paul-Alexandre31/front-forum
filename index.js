@@ -30,5 +30,5 @@ app.get('/write_message', function (req, res) {
 });
 
 
-
+console.log('server run ...')
 app.listen(3000);
