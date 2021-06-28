@@ -22,9 +22,6 @@ app.get('/register', function (req, res) {
 app.get('/connect', function (req, res) {
     res.render('page/connect' );
 });
-app.get('/hot_topics', function (req, res) {
-    res.render('page/hot_topics' );
-});
 app.get('/static', function (req, res) {
     res.render('img' );
 });
