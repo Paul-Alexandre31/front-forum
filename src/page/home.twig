@@ -1,10 +1,30 @@
 {% extends "../default.twig" %}
 {% block title %}Index{% endblock %}
-{% block head %}
+{% block content %}
+    {% for post in messages %}
 
-    <body>
-
-   </body>
-    </html>
-
+        <div class="box">
+            <div class="photo">
+                <img src="https://media.istockphoto.com/vectors/neutral-profile-picture-vector-id1091291084?k=6&m=1091291084&s=170667a&w=0&h=2Dx_R7emqSPjyLcvTRaPqXzbf4RP37hJf9DjUPD65lk="
+                     alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h3 id="title">{{ post. }} </h3>
+                </div>
+                <div class="title">
+                    <h1 id="username">{{ post. }} </h1>
+                </div>
+                <div class="txt">
+                    <p id="body">{{ post. }}</p>
+                    <div class="like-content">
+                        <button class="btn-secondary like-review">
+                            <i class="fa fa-heart" aria-hidden="true"></i> Like
+                        </button>
+                    </div>
+                    <a href="/" class="w3-bar-item w3-button w3-padding-large">respond</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
