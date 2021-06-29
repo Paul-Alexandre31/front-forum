@@ -22,6 +22,15 @@ app.get('/', function (req, res) {
 
     } );
 });
+app.get('/rhum', function (req, res) {
+    res.render('page/rhum' );
+});
+app.get('/whisky', function (req, res) {
+    res.render('page/whisky' );
+});
+app.get('/armagnac', function (req, res) {
+    res.render('page/armagnac' );
+});
 app.get('/register', function (req, res) {
     res.render('page/register' );
 });
@@ -32,12 +41,12 @@ app.get('/static', function (req, res) {
     res.render('img' );
 });
 app.get('/write_message', function (req, res) {
-    res.render('page/write_message',);
+    res.render('page/write_message');
 });
 
 app.get('/post',async function (req, res) {
     //création variable que l'on integre a coté de page/poste apres la virgule, enssuite on va dans le fichier voulu soit post, une fois dans post on ajoute le variable avec la boucle for
-   let post_info = await axiosIntance.get("") //mettre fin url donc /post
+   let post_info = await axiosIntance.get("page/write_message") //mettre fin url donc /post
     res.render('page/post_info',post_info);
 });
 
