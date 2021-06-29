@@ -6,7 +6,7 @@ app.set('views', `${__dirname}/src`);
 app.set('view engine', 'twig');
 app.use('/static', express.static(__dirname + '/public'));
 const axiosIntance = axios.create({
-    baseURL: "localhost:1000"
+    baseURL: "http://localhost:1000"
 })
 
 // This section is optional and used to configure twig.
@@ -17,16 +17,17 @@ app.set("twig options", {
 });
 
 app.get('/', async function (req, res) {
-    const messages = await axiosIntance.get("message")
+    const messages = (await axiosIntance.get("message")).data;
+    console.log(messages)
     res.render('page/home', {messages});
 });
-app.get('/rhum', async function (req, res) {
+app.get('/1', async function (req, res) {
     res.render('page/rhum');
 });
-app.get('/whisky', function (req, res) {
+app.get('/2', function (req, res) {
     res.render('page/whisky');
 });
-app.get('/armagnac', function (req, res) {
+app.get('/3', function (req, res) {
     res.render('page/armagnac');
 });
 app.get('/register', function (req, res) {
