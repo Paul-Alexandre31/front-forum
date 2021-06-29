@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    let formLogin = document.getElementById('mess')
+    let formLogin = document.getElementById('message')
 
     console.log(formLogin)
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         xhr.open("POST", "http://localhost:1000/message", true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(JSON.stringify({
-                message: document.getElementById("message").value,
+                message: document.getElementById("body").value,
             }),
         );
         let response = xhr.response
