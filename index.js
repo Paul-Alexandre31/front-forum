@@ -17,7 +17,7 @@ app.set("twig options", {
 });
 
 app.get('/', async function (req, res) {
-    const messages = (await axiosIntance.get("message")).data;
+    const messages = (await axiosIntance.post("message")).data;
     console.log(messages)
     res.render('page/home', {messages});
 });
